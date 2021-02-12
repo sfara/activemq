@@ -1,5 +1,4 @@
-FROM webcenter/openjdk-jre:8
-MAINTAINER Sebastien LANGOUREAUX <linuxworkgroup@hotmail.com>
+FROM ubuntu:18.04
 
 ENV ACTIVEMQ_CONFIG_DIR /opt/activemq/conf.tmp
 ENV ACTIVEMQ_DATA_DIR /data/activemq

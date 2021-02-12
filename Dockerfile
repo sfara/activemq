@@ -5,11 +5,13 @@ ENV ACTIVEMQ_DATA_DIR /data/activemq
 
 # Update distro and install some packages
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y python-testtools python-nose python-pip vim curl supervisor logrotate locales  && \
-    update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX && \
-    locale-gen en_US.UTF-8 && \
-    dpkg-reconfigure locales && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install --no-install-recommends -y openjdk-8-jre-headless && \
+    apt-get install --no-install-recommends -y python-testtools python-nose python-pip vim curl supervisor logrotate python-setuptools
+    # apt-get install --no-install-recommends -y python-testtools python-nose python-pip vim curl supervisor logrotate locales  && \
+    # update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX && \
+    # locale-gen en_US.UTF-8 && \
+    # dpkg-reconfigure locales && \
+    # rm -rf /var/lib/apt/lists/*
 
 # Install stompy
 RUN pip install stomp.py

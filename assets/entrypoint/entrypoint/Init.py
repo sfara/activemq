@@ -171,7 +171,6 @@ class Init():
         self.replace_all(ACTIVEMQ_CONF + "/activemq.xml", '<tempUsage limit="[^"]+"/>', '<tempUsage limit="' + tempUsage + '"/>')
         self.replace_all(ACTIVEMQ_CONF + "/activemq.xml", '\?maximumConnections=1000', "?maximumConnections=" + str(maxConnection))
         self.replace_all(ACTIVEMQ_CONF + "/activemq.xml", 'wireFormat\.maxFrameSize=104857600', "wireFormat.maxFrameSize=" + str(frameSize))
-        # self.replace_all(ACTIVEMQ_CONF + "/activemq.xml", '</policyEntries>', "</blah>")
         self.replace_all(ACTIVEMQ_CONF + "/activemq.xml", '</policyEntries>', """  <policyEntry alwaysRetroactive="true" topic="fleetConfig.&gt;">
                   <subscriptionRecoveryPolicy>
                     <lastImageSubscriptionRecoveryPolicy/>
